@@ -1,0 +1,40 @@
+// Write a program which accept a number from user and count frequecy of digits which are less than 6 in it.
+#include<stdio.h>
+int Count(int iNo)
+{
+    int iDigit = 0;
+    int iFreq = 0;
+
+    if(iNo <= 0)
+    {
+        iNo = -iNo;
+    }
+
+    while(iNo > 0)
+    {
+        iDigit = iNo % 10;
+    
+        if(iDigit < 6)
+        {
+            iFreq++;    
+        }   
+
+        iNo = iNo / 10;
+    }
+    return iFreq;
+}
+int main()
+{
+    int iValue = 0;
+    int iRet = 0;
+
+    printf("Enter the number: ");
+    scanf("%d",&iValue);
+
+    iRet = Count(iValue);
+
+    printf("%d",iRet);
+
+    return 0;
+}
+ 
